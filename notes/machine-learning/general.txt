@@ -1,0 +1,143 @@
+﻿* WHY NOT OTHER COST FUNCTIONS IN LINEAR REGRESSION ?
+* HOW THIS COST FUNCTION ALWAYS GOING TO GIVE CONVEX FUNCTION ?
+* WHY NORMAL EQUATION WORKS WELL ONLY WITH LINEAR REGRESSION, WHY NOT WITH OTHERS ?
+* HOW LOGISTIC FUNCTION IS CONVEX FUNCTION ?
+* WHY USING DIFFERENT COST FUNCTION FOR LOGISTIC REGRESSION AND WHY NON CONVEX IF WE USE SAME COST FUNCTION AS IN LINEAR 
+  REGRESSION ?
+* MAXIMUM LIKELIHOOD ESTIMATION AND LOGISTIC REGRESSION COST FUNCTION LINK ?
+* HOW NORMAL EQUATION IS DERIVED ?
+* HOW CPU AND GPU ARE CONSIDERED AS HYPERPARAMETERS ?  
+
+SEMI-SUPERVISED LEARNING
+
+WHERE AN INCOMPLETE TRAINING SIGNAL IS GIVEN: A TRAINING SET WITH SOME (OFTEN MANY) 
+OF THE TARGET OUTPUTS MISSING. THERE IS A SPECIAL CASE OF THIS PRINCIPLE KNOWN AS 
+TRANSDUCTION WHERE THE ENTIRE SET OF PROBLEM INSTANCES IS KNOWN AT LEARNING TIME, 
+EXCEPT THAT PART OF THE TARGETS ARE MISSING.
+
+REINFORCEMENT LEARNING
+
+REINFORCEMENT LEARNING IS AN AREA OF MACHINE LEARNING. REINFORCEMENT. IT IS ABOUT 
+TAKING SUITABLE ACTION TO MAXIMIZE REWARD IN A PARTICULAR SITUATION. IT IS EMPLOYED
+BY VARIOUS SOFTWARE AND MACHINES TO FIND THE BEST POSSIBLE BEHAVIOR OR PATH IT 
+SHOULD TAKE IN A SPECIFIC SITUATION.
+
+EXAMPLE: CHESS GAME (REINFORCEMENT LEARNING), OBJECT RECOGNITION (SUPERVISED LEARNING)
+
+EUCLIDEAN VS MANHATTAN DISTANCE:
+IN THIS FIELD, DISTANCE BETWEEN TWO POINTS WERE GENERALLY COMPUTED BY EUCLIDEAN DISTANCE.
+IN ORDER TO GIVE EQUAL WEIGHTAGE, THE INVOLVED FEATURES SHOULD BE IN SAME SCALE. [FEATURE SCALING]
+
+FEATURE SCALING CAN BE DONE IN MANY WAYS
+
+STANDARDISATION
+NORMALISATION
+MOST OF THE LIBRARIES WHICH WE ARE USING IN PYTHON WILL TAKE CARE OF FEATURE SCALING BY ITSELF
+
+BACKWARD ELIMINATION: 
+
+GIVES A WAY OF FINDING EFFICIENT INDEPENDENT VARIABLES TO THE MODEL
+WHICH IS ACTUALLY INVOLVED IN AFFECTING THE PART OF OVERALL RESULT.
+
+DECISION TREES:
+
+ENTROPY INFORMATION IS NOTHING BUT HOW MUCH GROUP IS HOMOGENOUS,
+ENTROPY VALUE MORE MEANS PARTICLES MORE MIXED AND THAT IS NEARER TO 1.
+
+R SQUARED:
+
+GENERALLY TELLS HOW GOOD MODEL FITS THE DATA.
+COMMONLY VALUES LIES BETWEEN 0 TO 1, MODEL MORE NEARER TO 1, MORE GOOD FIT.
+
+CUMULATIVE ACCURACY PROFILE CAP:
+
+EG: PREDICTING A MODEL WHO WILL BUY OUR PRODUCT, FINALLY WE BUILT MODEL WHICH PREDICTS EXACTLY
+WHO WILL BUY AND WHO WILL NOT ?
+
+IMPORTANCE OF CROSS VALIDATION:
+
+IT ALLOWS US TO COMPARE DIFFERENT MACHINE LEARNING METHODS AND GET A SENSE OF 
+HOW WELL THEY WILL WORK IN PRACTICE
+
+ROC & AOC
+PERFORMANCE MEASURES
+
+ROC CURVES MAKE IT EASY TO IDENTIFY THE BEST THRESHOLD FOR MAKING A DECISION
+EG: LETS SAY WE ARE USING LOGISTIC REGRESSION
+OVER THERE, SELECTING RIGHT THRESHOLD IS A KEY FOR CLASSIFICATION
+
+AOC-AREA UNDER THE CURVE (ROC)
+HELPS YOU DECIDE WHICH CATEGORIZATION METHOD (SUCH AS LOGISTIC REGRESSION, RANDOM FOREST) IS BETTER
+WHICH IS NOTHING BUT, IT HELPS TO DECIDE WHICH ROC CURVE IS DOING BETTER IN SELECTING RIGHT THRESHOLD
+WHERE EACH ROC CURVE CREATED FROM DIFFERENT ALGORITHMS. 
+
+GENERALLY ROC CURVES WERE PLOTTED WITH TWO DIMENSIONS
+HERE ARE THE TWO DIMENSIONS,
+
+SENSITIVITY	- TRUE POSITIVES RATE	-	TRUE POSITIVES / (TRUE POSITIVES + FALSE NEGATIVES)
+
+SPECIFICITY - FALSE POSITIVES RATE	-	FALSE POSITIVES/ (FALSE POSITIVES + TRUE NEGATIVES)
+			(OR) PRECISION			-   TRUE POSITIVES / (TRUE POSITIVES + FALSE POSITIVES)
+
+FOR SPECIFICITY, WE CAN USE EITHER OF ONE FORMULA, DEPENDING UPON THE CASE STUDY
+
+LOGISTICS REGRESSION
+NEURAL NETWORK
+SUPPORT VECTOR MACHINE
+PRINCIPAL COMPONENT ANALYSIS
+REINFORCEMENT LEARNING
+Kullback-Liebler Divergence
+Subgradients
+
+
+TRIPLET LOSS IS ONE GOOD WAY TO LEARN THE PARAMETERS OF A CONV NET FOR FACE RECOGNITION.
+ANOTHER WAY TO COMPUTE THE SAME PARAMETERS IS BY CONSIDERING FACE RECOGNITION AS BINARY CLASSIFICATION PROBLEM.
+
+NEURAL STYLE TRANSFER
+1D, 2D, 3D DATA CONVOLUTIONS IN CNN
+
+
+coefficient of determination
+interpreted as proportion of variation in the dependent variable is predictable from independent variable
+
+coefficient of correlation
+interpreted as relationship between the dependent and independent variable
+
+Our threshold 0.05 in hypothesis testing, It means 5% of times will give you incorrect solutions which is false positives. More the test we do more we end up with more false positives since it is set to 5% of total number of times. This problem of increase of more false positives in more tests is called multiple testing problem. There are several methods to compensate this multiple testing problem, One popular method is called false discovery rate. Either taking multiple test and picking the test with small p-value or explicitly making the test (by adding a new sample to the test which is already close to low p-value) to end up with small p-value is called p-hacking. 
+
+Multiple testing problem,
+False discovery rate are a tool to control the number of false positives (by increasing the resulted p-value bit higher).
+
+Statistical power,
+Power is the probability of correctly rejecting the null hypothesis. Power analysis will tell us how many measurements we need to collect to have a good amount of power. If in case test data are coming from two different distributions, But it is highly overlapping then we will have low power. However if we want more power, then we can increase the sample size. 
+
+Covariance,
+Main idea behind covariance is that it can classify three types of relationships. Positive, Negative and No trend.
+Covariance is a computational stepping stone to something that is interesting, like correlation.
+
+Correlation,
+We can quantify the strength of the relationship or trend with correlation. If we have more data, We will have smaller p-value (Probability of next random data point which will follow the same trend) and will have more confidence in our inferences.
+
+Standard error,
+Standard deviation of all the estimated means is called standard error.
+
+R Squared,
+Signifies percentage of variation explained by your hypothesis.
+
+Bootstrapping,
+Generating new samples from our existing sample by randomly picking anyone from it and repetition is allowed.
+
+Confidence interval,
+Generally 95% of confidence interval means it covers 95% of the bootstraped means.
+
+T test,
+Use T test when you don't know the standard deviation or variance of the population. Or the sample size is smaller than 30.
+
+Quantile-Quantile Plot,
+We can use this plot to discover the distribution of our data.
+
+Probability vs Likelihood,
+Statquest, Video no: 39
+
+
+There are two main categories of T tests, Paired and Unpaired T tests. Use paired t test, When you have before and after measurements taken from the same test subject for example if you have a drug for blood pressure, say like you take a group of people and you measure their blood pressure and then you give them this drug and after they've taken the drug you take the measurements again. So for each person in the study you will have a pair of measurements. Use unpaired t test, when you have unpaired data For example say like you have a one group of people and you measure their height and we call that group a and then we have another group of people and we measure their height we call that group B. There are two variant in unpaired T tests, One assumes that the variance is always same across groups so the variation around the height measurements in Group A is exactly same as the variation around the height measurements in Group B. There's another type of t-test that does not assume equal variation so you could have a different measurement of variance in Group A as opposed to group B. I often recommend people to don't assume that the variation is equal in both groups simply because that test is slightly more conservative and if your data can pass this more conservative t-test then you know your data are rock solid. The second question people ask me is should they use one sided or two sided t-test. Now a two-sided T tests say for example we'll go back to our height measurements so we have Group A and Group B and we've measured the heights in both groups a two-tailed t-test would test to see if group a is higher than group B and it also tests to see if it's significantly smaller than Group B so it tests both sides it tests both the conditions. 
