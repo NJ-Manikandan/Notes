@@ -1,0 +1,738 @@
+Data science (PIERIAN DATA)
+	
+	python packages
+
+		* NumPy (linear algebra library)
+		* SciPy
+		* Pandas
+		* Seaborn
+		* Scikit-Learn
+		* MatplotLib
+		* Plotly
+		* PySpark
+
+Jupyter:	Shift + Tab on any function
+To preview documentation of the object.
+
+NumPy (base to all other libraries)
+
+	NumPy Arrays
+	
+	difference between (NumPy Arrays & Python List)
+	
+		* Size - Numpy data structures take up less space
+		* Performance - they have a need for speed and are faster than lists
+		* Functionality - SciPy and NumPy have optimized functions such as linear algebra operations built in.
+	
+	import numpy as np
+	from numpy.random import randint	(or)	can use directly as numpy.random.randint
+
+	# NumPy Arrays comes in two flavours, vectors & matrices.
+
+		list = [1,2,3,4]
+		
+		arr	 = np.array(list)		# numpy arrays (typecasting)
+		
+		arr + arr, arr - arr, arr + 2, arr * arr (squares all numbers)
+		
+		arr/0				# throws warning (only in numpy arrays)
+							# anything divided by zero returns inf
+							# but 0/0 returns nan
+		
+		np.arange(1,4,1) 	# vectors	(1D)
+							# array([1,2,3])
+							# third param specifies step size
+							
+		np.zeros(3)			# passing single digit which will create 
+							# vectors 	(1D) **
+							# array([0.,0.,0.])
+							
+		np.zeros((2,2))		# matrices 	(2D) **
+							# array([0.,0.],[0.,0.])
+							
+		np.ones((3))		# vectors 	(1D)
+							# array([1.,1.,1.])
+							
+		np.ones((2,2))		# matrices 	(2D)
+							# array([1.,1.],[1.,1.])
+							
+		np.linspace(1,5,4)	# third param specifies evenly spaced points (default: 50)
+							# array([1.        , 2.33333333, 3.66666667, 5.        ])
+		
+		np.eye(3)			# identity matrix	(2D)
+		
+		np.random.rand(3)	# vectors	(1D)	# info not given
+							# array with 3 random numbers in it
+							# range (0 - 1)
+							
+		np.random.rand(1,1)	# matrices	(2D)	# here you can pass like this, instead of passing as tuple in args
+							# randomly generate samples from uniform distribution
+		
+		np.random.randn(2)	# vectors	(1D)
+							# randomly generate samples from normal distribution (positive & negative no's)
+							
+		np.random.randint(1,100,2)	# 2 random numbers btw 1 to 100
+									# third param specifies size (default: 1)
+		
+		
+		arr.reshape(2,2)	# changes dimension to 2X2
+							# error throws if arr elements miss or not fits	
+		
+		arr.max()			# returns max number from arr
+		
+		arr.argmax()		# return index of max number
+		
+		np.array(1,2).shape			# return dimension 
+									# (2,)
+		
+		np.array(1,2,3,4).reshape(2,2).shape	# return dimension 
+												# (2,2)
+		
+		np.ones(3).dtype			# data type (float)
+		
+		np.ones(3).ndim				# no of dimensions (2)
+		
+		np.sqrt(arr)				# square root
+		
+		np.exp(arr)					# exponential
+
+		arr = numpyArr				# share by reference
+									# changing items will impact original numpyArr
+									
+		arr = numpyArr[0:6]			# share by reference
+									# changing items will impact original numpyArr
+		
+		arr = numpyArr.copy()		# only copies items
+		
+		arr[:] = 100				# works, all elements get updated
+		
+		list[:] = 100				# error
+		
+		Indexing
+		
+		Also works with negative indexing
+		
+			arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+	
+			arr_2d[1]				# array([4, 5, 6])
+	
+			arr_2d[1][0]	(or)	arr_2d[1,0]
+									# won't work with list
+									
+			arr_2d[:2,1:]			# [[2,3],[5,6]]
+			
+			arr_2d[:2][1:]			# [[4,5,6]]	
+
+				how it works ?
+				
+					arr_2d[:2,1:]	# without splitting operation, it fetches.
+					
+					arr_2d[:2][1:]	# splits operation, fetches
+									# steps	1. a = arr_2d[:2]	2. a[1:]
+									 
+			arr_2d[:, 2]			# 1D, array([2, 5])
+			
+			arr_2d[:, 2:3]			# 2D, array([[2], [5]])						
+									 
+			np.random.seed(101)		# make sure, that we get the same random no's
+		
+		Advance slicing
+		
+			1. bool_arr = arr > 1	# array([false, true, true, true])
+		
+			2. arr[bool_arr]		# array([2, 3, 4])
+			
+			(or)
+			
+			1. arr[arr>1]			# array([2, 3, 4])
+			
+		Broadcasting
+		
+			The term broadcasting describes how NumPy treats arrays with different shapes during arithmetic operations. Subject to certain constraints, the smaller array is “broadcast” across the larger array so that they have compatible shapes.
+			Broadcasting provides a means of vectorizing array operations so that looping occurs in C instead of Python. It does this without making needless copies of data and usually leads to efficient algorithm implementations. There are also cases where broadcasting is a bad idea because it leads to inefficient use of memory that slows computation.
+
+			NumPy operations are usually done element-by-element which requires two arrays to have exactly the same shape. Numpy’s broadcasting rule relaxes this constraint when the arrays’ shapes meet certain constraints.
+
+			The Broadcasting Rule: In order to broadcast, the size of the trailing axes for both arrays in an operation must either be the same size or one of them must be one.
+
+				A(2-D array): 4 x 3
+				B(1-D array):     3
+				Result      : 4 x 3
+				
+				A(4-D array): 7 x 1 x 6 x 1
+				B(3-D array):     3 x 1 x 5
+				Result      : 7 x 3 x 6 x 5
+
+				A: 4 x 3
+				B:     4
+				
+		print(b[...,1]) #Equivalent to b[: ,: ,1 ]		
+				
+Pandas (data visualization library)
+
+	built on top of NumPy, allows fast analysis, data cleaning & preparation
+	excels in performance & productivity
+	also has built in visualization features
+	can work with data from wide variety of sources
+	
+		* Series		-	key to using a series is understanding its index
+							in Pandas makes use of these index names or numbers
+							by allowing for very fast lookups of information and 
+							it works just like a hash table or dictionary
+		* DataFrames
+		* Missing Data
+		* GroupBy
+		* Merging, Joining & Concatenating
+		* Operations
+		* Data Input & Output
+		
+	import pandas as pd
+
+		Series	(Key, Value)
+			
+			labels 	= ['a','b','c','d']
+			list 	= [1,2,3,4]
+			arr 	= np.array(list)
+			d		= {'a': 10, 'b': 20, 'c': 30}
+			
+			pd.Series(list)	# key	value
+								0	1
+								1 	2
+								2 	3
+								3 	4
+								
+			pd.Series(arr)	# key	value
+								0	1
+								1 	2
+								2 	3
+								3 	4
+			
+			pd.Series(d)	# key	value
+								a	10
+								b 	20
+								c 	30
+								
+			pd.Series(data = list, index = labels)	# key	value
+														a	1
+														b 	2
+														c 	3
+														d 	4
+
+			pd.Series(list, labels)	# key	value
+										a	1
+										b 	2
+										c 	3
+										d 	4
+
+								
+			pd.Series(arr, labels)	# key	value
+										a	1
+										b 	2
+										c 	3
+										d 	4		
+										
+			pd.Series(data = [sum, print, len])	# key	value
+													0	<function sum>
+													1 	<function print>
+													2 	<function len>
+													
+			ser1	=	pd.Series(arr, labels)
+			ser2	= 	pd.Series(d)
+			
+			ser1 + ser2				# performs operation key based
+									# a 1.0
+									  b	2.0
+									  c	3.0
+									  d	NaN
+									  
+		DataFrames (bunch of series)
+		
+				|	c	|	d
+			----|-------|------
+			a   |	..	|	..		# Series
+			----|-------|------	
+			b	|	..	|	..		# Series
+					
+				# Series	Series
+			
+								data		 row		columns
+			df = pd.DataFrame(randn(2,2), ['a', 'b'], ['c', 'd'])	# (picture.3)
+
+			# its kinda bunch of series, sharing common indexes such as 'a', 'b'
+			
+			df['c']		# Series
+						# Index	Value
+						  'a'	..
+						  'b'	..
+						  
+			df.loc['a']	# Series
+						# Index	Value
+						  'c'	..
+						  'd'	..
+						  
+			df.loc['a']	or	df.iloc[0]	# both returns same Series
+										# loc - location, iloc - index location
+										
+			we can also access df like numpy arrays
+			
+				df.loc['a', 'd']			# float
+				
+				df.loc[['a','b'], ['d']]	# Series
+						  
+			df[['a','b']]	# Sub DataFrames
+			
+			df['e'] = df['c'] + df['d']
+			
+			
+				|	c	|	d	|	e
+			----|-------|-------|-----
+			a   |	..	|	..	|	..
+			----|-------|-------|-----	
+			b	|	..	|	..	|	..
+			
+			
+			df.drop('e')					# error, no 'e' index found
+			df.drop('a')					# works
+													
+			newdf = df.drop('e', axis = 1)			# default value	(inplace: false, axis: 0)
+													# works, but wont affect df, until & unless you specify inplace = True
+			df.drop('e', axis = 1, inplace = True)	# now affect df
+			
+				|	c	|	d
+			----|-------|------
+			a   |	..	|	..
+			----|-------|------	
+			b	|	..	|	..
+		
+			df[df>0]		# (picture 4)
+			
+			df['c']>1		# Series with value boolean
+			
+			df[df['c']>1]	# Here you will not get that entire row
+							# Since you are getting one level deeper
+							
+			df[(df['c']>1) & (df['d']>1)]		# works
+			df[(df['c']>1) and (df['d']>1)]		# error
+			
+										[and - works only with boolean not with Series of boolean]
+							
+			df.reset_index()	# (picture 5)			
+
+			newInd = 'f g'.split()
+			
+			df['e']	= newInd
+			
+				|		|		|
+				|	c	|	d	|	e
+			----|-------|-------|------
+			a   |	..	|	..	|	f
+			----|-------|-------|------
+			b	|	..	|	..	|	g
+				|		|		|
+				
+			df.set_index('e')
+			
+
+				|		|	
+				|	c	|	d
+			--------------------
+			e	|		|
+			----|-------|-------
+			f   |	..	|	..	
+			----|-------|-------
+			g	|	..	|	..	
+				|		|		
+			
+							
+			Multilevel index 	refer. DataFrames - Part 3 (picture 6)
+			
+			Missing data
+			
+				df.dropna()				# drops row if any one of the item is not having value.
+				
+				df.dropna(axis = 1)		# drops column if any one of the item is not having value.
+				
+				df.dropna(thresh = 2)	# drops row if not having atleast two valid values.
+				
+				df.fillna(value = 'New')
+				
+				df['c'].fillna(value = df['c'].mean())
+			
+			Group by
+			
+				newdf = pd.DataFrame({'company': [zoho, amazon, edgeverve, edgeverve], 'state': ['TN', 'TN', 'TN', 'KA'], 'points': [2, 1, 4, 3]})
+				
+				newdfbycompany = newdf.groupby('company')	# groupby object
+				
+				newdfbycompany.mean()	# dataframe
+				
+						|	rank
+				--------|---------		
+				company |
+				--------|---------
+				amazon	|	1.0	
+						|
+				edgeverv|	3.5
+						|
+				zoho	|	2.0
+				
+				newdfbycompany.sum()	# dataframe
+				
+				newdfbycompany.count()	# dataframe
+				
+				
+				newdfbycompany.describe()	# dataframe
+											# it gives all detail from that groupby object.
+											# calculated
+											
+			Concatenation
+			
+				pd.concat([df1, df2, df3])	# dimension should match along the axis
+				
+			Merging
+			
+				pd.merge(df1, df2, how = 'inner', on = 'column-name')	# how (default value: inner)
+				
+			Joining
+			
+				df1.join(df2)
+				
+				df2.join(df1, how = 'outer')
+				
+			Operations
+			
+				df.head()	# prints
+				
+				df['a'].unique()	# array
+				
+				df['a'].nunique()	# int
+				
+				df['a'].value_counts()
+				
+				def times2(x)
+					return x**2
+				
+				df['a'].apply(times2)	#	all items in series get applied to this function
+				
+				df.columns	# Index(['col1', 'col2'])
+				
+				df.index	# RangeIndex(start = ?, end = ?, step = ?)
+				
+				df.sort_values('col2')
+				
+				df.isnull()
+				
+				df.pivot_table(values = 'D', index = ['A', 'B'], columns = ['C'])	# use values from D column
+																					# pivot A & B with column C
+																						
+MatplotLib (Data Visualization Library)
+
+	import matplotlib.pyplot as plt	# Standard alias name
+	
+	%matplotlib inline				# Only needed for Jupyter
+	
+	import numpy as np
+	
+	x = np.linspace(0, 5, 11)
+	
+	y = x ** 2
+	
+	Note: Two ways of visualizing charts: Functional & Object Oriented
+	
+	# Functional
+	
+		plt.plot(x, y) 
+		# plt.show()	# optional in Jupyter
+						  Just printing the plot instead of showing
+						  
+		plt.xlabel('X Label')
+		plt.ylabel('Y Label')
+		plt.title('Title')
+		
+		PICTURE. 13
+		
+		# Subplot
+		
+		plt.subplot(1, 2, 1)	# number of row, number of column, index
+		plt.plot(x, y, 'r')		# color: red
+		
+		plt.subplot(1, 2, 2)	
+		plt.plot(x, y, 'b')
+	
+		PICTURE. 14
+	
+	# Object Oriented (Standard way, would have lots of control over it)
+	
+		fig = plt.figure()
+		axes1 = fig.add_axes([0.1, 0.1, 0.8, 0.8])	# left, bottom, width, height
+		axes2 = fig.add_axes([0.2, 0.2, 0.4, 0.4])	
+		
+		axes1.plot(x, y)
+		# axes1.plot(x, y**2)							# figure will have two lines in it	
+		axes1.set_xlabel('X Label')
+		axes1.set_ylabel('Y Label')
+		axes1.set_title('Title')
+		
+		axes2.plot(y, x)
+		axes2.set_xlabel('X Label')
+		axes2.set_ylabel('Y Label')
+		axes2.set_title('Title')
+		
+		PICTURE. 15
+		
+		# subplots way
+		
+		fig, axes = plt.subplots()
+		axes.plot(x, y)									# will work exactly same like above code
+		
+		fig, axes = plt.subplots(nrows = 1, ncols = 2)	# here axes (list), can iterate through it
+		note: when using more rows and more columns, plots can happen to override on each other
+		in order to avoid that issue, use this function 
+		plt.tight_layout()
+		
+		axes[0].plot(x, y)
+		axes[0].set_xlabel('X Label')
+		axes[0].set_ylabel('Y Label')
+		axes[0].set_title('Title')
+		
+		axes[1].plot(y, x)
+		axes[1].set_xlabel('X Label')
+		axes[1].set_ylabel('Y Label')
+		axes[1].set_title('Title')
+
+		PICTURE. 16
+		
+		figsize parameter specifies figure size, height and width of figure
+		its available in both ways
+		
+		fig, axes = plt.subplots(figsize = (8, 2))
+		axes.plot(x, y)
+		
+		think in terms of stretched chart along x axis
+		
+		# save figure
+		
+		fig.savefig('any_name.any_img_format')
+		
+		# add legends
+		
+		fig = plt.figure()
+		
+		ax = fig.add_axes([0,0,1,1])
+		ax.plot(x, x**2, label = 'x squared')
+		ax.plot(y, x**3, label = 'x cubed')
+		ax.legend()	# loc parameter optional, which helps us to place legend box anywhere
+					  in the figure. loc valid value ranges from 0 to 10
+					  -- refer documentation, for more details
+					# loc values can also give in tuples that is (x, y)
+					
+		# color
+
+		ax.plot(x, y,  color = 'red')		# color, values can take string, hexacode, rgb, character
+											# linewidth or lw, values which increase thickness of line, default_value: 1
+											# alpha, values which helps to work with transparency
+											# linestyle or ls, which helps to give various style to line, default_style: '-'
+											# marker, actual plot (x, y), which helps to give various style to line
+											# marker size, which increase the size of marker
+											# markerfacecolor, markeredgecolor, markeredgewidth
+											
+		ax.set_xlim([0, 1])					# defines x axis scale
+		ax.set_ylim([0, 2])					# defines y axis scale
+		
+		# different types of charts
+		
+		plt.scatter(x, y)					# PICTURE 18
+		plt.hist(data)						# PICTURE 19
+		plt.boxplot(data, vert = true, patch_artist = true)		# PICTURE 20
+		
+	Playlist important points: YouTube:	Matplotlib python tutorial:	Sentdex
+	
+		Video 1: Introduction and Line				#	No need to watch	#	Picture 7
+		Video 2: Legend titles and labels				#	Line graph			#	Picture 8
+														Title, XLabel, YLabel, 
+														Label - Helpful to distinguish multiple lines
+																which will come in place of legend text, Legend
+		Video 3: Bar charts and histograms			#	Simple				#	Picture 9						
+														Color -	Can be given in full color, hexacode, single letter
+														
+		Video 4: Scatter plots						#	Simple				#	Picture 10									
+													#	S -	Marker size which means size of dot in chart
+													#	Market	-	 Symbol to plot in place of dot
+
+		Video 5: Stack plots							#	First set of plot	-	Only to show legend 	#	Picture 11
+		
+		Video 6: Pie 								#	Shadow	-	Box shadow to chart		#	Picture 12
+													#	explode	-	Needed only if you want to show slice in popped out fashion
+													#	autopct	-	Shows percentage area of region on slice
+													
+Seaborn wrote on MatplotLib (Data Visualization Library)
+
+	* it is statistical plotting library
+	* it has beautiful default styles
+	* it also designed to work well with pandas dataframe obj
+	
+	Note: 			|	Continous values column					Discrete values column
+					|	or	Numeric								or	Categorical
+					|	
+	Dataset name:	|			salary									age
+	my_data			|
+					|			 bill									sex
+
+	which will help you to understands what these charts actually been used for and representing it
+					
+	# distribution plot
+	
+		import seaborn as sns
+		sns.distplot(my_data['salary'], kde = false, bins = 40)	#	univariable
+																#	kde stands for kernel density estimation
+		
+		PICTURE. 21
+		
+		# joint plot									#	which will help you to compare two features
+		
+		sns.jointplot(x = 'salary', y = 'age', data = my_data)	#	my_data refers to entire dataset
+																#	kind parameter, which helps to gives different
+																	styles to points, default_value: 'scatter'
+		PICTURE. 22
+		
+		# pair plot										#	pairwise relationships across an entire dataframe atleast for
+															numerical columns
+															used to compare with all other features in each figure
+
+		sns.pairplot(my_data, hue = 'sex')				#	hue, which helps to differentiate their category in each figure
+														#	palette
+					
+		PICTURE. 23
+					
+		# rug plot
+		
+		sns.rugplot(my_data['salary'])					#	provides univariate distribution
+															more similiar like distplot
+					
+		PICTURE. 24
+					
+	# categorical plot
+	
+		# bar plot
+		
+		sns.barplot(x = 'sex', y = 'bill', data = my_data, estimator = np.std)
+		
+														#	estimator, which used to compute group by of chart
+															by default, estimator will compute by average of categories
+		
+		PICTURE. 25
+		
+		# count plot									#	will be same as like bar plot, except this will count occurence
+		
+		# bar plot
+		
+		sns.boxplot(x = 'day', y = 'bill', data = my_data, hue = 'smoker')
+		
+		# violin plot									#	same like box plot, but it gives little more information
+		
+		sns.violinplot(x = 'day', y = 'bill', data = my_data, hue = 'smoker', split = True)
+		
+		PICTURE. 26
+		
+		# strip plot									#	essentially it looks like a scatter plot,
+														#	here jitter would add some noise to avoid points colliding each
+															other
+		
+		PICTURE. 27
+		
+		sns.stripplot(x = 'day', y = 'bill', data = my_data, jitter = True)
+		
+		# swarm plot									# 	its nothing but combination of violin & strip plot
+														#	its better to use for small dataset, because in high dataset
+															visuals would collide with each other, so its not recommended too
+		
+		PICTURE. 28
+		
+		Note: you can view two visuals combinely by adding back to back, all charts works in same way 
+			  you can use factor plot also, to view your dataset in any of the above visual by giving respective kind attribute
+		
+		sns.violinplot(x = 'day', y = 'bill', data = my_data)
+		sns.swarmplot(x = 'day', y = 'bill', data = my_data)
+		
+		PICTURE. 29
+		
+		sns.factorplot(x = 'day', y = 'bill', data = my_data, kind = 'bar')
+		#	example of using factor plot to visualize bar plot
+		
+		PICTURE. 30
+		
+	# matrix plot
+	
+		# heat map										#	helps to visualize matrix plot
+														#	for this dataset, has to be in matrix form
+															matrix form means both index name and column name match up
+															so that the cell value actually indicates something that is
+															relevant to both of those names. inorder to change dataset to 
+															matrix form use corr() or pivot_table() method
+															
+		sns.heatmap(my_data.corr(), annot = True, cmap = 'coolwarm')
+		
+		sns.heatmap(my_data.pivot_table(index = 'age', column = 'sex', values = 'salary'), 
+					annot = True, cmap = 'magma', linecolor = 'white', linewidths = 3)	
+														
+														#	cmap, color map
+		
+		PICTURE. 31
+		
+		# cluster map
+		
+		sns.clustermap(my_data, cmap = 'coolwarm', standard_scale = 1)
+	
+		PICTURE. 32
+	
+	# grid
+	
+		# pair grid										#	which allows us to add customizations on top of pairplot
+		
+		grid = sns.PairGrid(my_data)
+		grid.map(sns.distplot)							#	which brings distribution charts in all grid
+		
+		or
+		
+		grid = sns.PairGrid(my_data)
+		grid.map_diag(sns.distplot)						#	which brings distribution	plots in only diagonals of grid
+		grid.map_upper(plt.scatter)						#	which brings scatter plots in only upper triangle portion of grid
+		grid.map_lower(sns.kdeplot)						#	which brings kde 	 plots in only lower triangle portion of grid
+		
+		PICTURE. 33
+		
+		# facet grid
+		
+		grid = sns.FacetGrid(data=my_data, col='age', row='sex')
+		grid.map(plt.scatter, 'salary', 'bill')
+		
+		PICTURE. 34
+		
+		
+		
+Additional Info on Exercise:
+	
+	# updates IsAlone column only if familysize is 1
+	dataset.loc[dataset['FamilySize'] == 1, 'IsAlone'] = 1
+	
+	# for creating range, initially finds min & max of data 
+	# then splits given data into specified number of bins
+	# then replace every data with the respective range
+	search: Binning Data with Pandas qcut and cut
+	
+	# helps to extract word which is right before (.)
+	def get_title(name):
+    title_search = re.search(' ([A-Za-z]+)\.', name)
+    # If the title exists, extract and return it.
+    if title_search:
+        return title_search.group(1)
+    return ""
+	input: i am mr.mani output: mr
+	
+	# onehotencoder 
+	# encode
+	dataset['Sex'] = dataset['Sex'].map( {'female': 0, 'male': 1} ).astype(int)
+	
+	title_mapping = {"Mr": 1, "Miss": 2, "Mrs": 3, "Master": 4, "Rare": 5}
+    dataset['Title'] = dataset['Title'].map(title_mapping)
+    dataset['Title'] = dataset['Title'].fillna(0)

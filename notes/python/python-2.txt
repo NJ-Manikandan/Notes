@@ -1,0 +1,1301 @@
+programming paradigm
+it is a style of programming, there are lots for programming language that are known but all of them need to follow some strategy when they are implemented and this strategy is paradigm.
+
+imperative programming paradigm: 
+It performs step by step task by changing state.
+programming language: C
+
+Advantages:
+Very simple to implement 
+It contains loops, variables etc. 
+
+Disadvantages:
+Complex problem cannot be solved 
+Less efficient and less productive 
+Parallel programming is not possible 
+
+Procedural programming paradigm
+Same as imperative and with Code Reusability
+
+Object oriented programming – Its all about data encapsulation
+The program is written as a collection of classes and object which are meant for communication. The smallest and basic entity is object and all kind of computation is performed on the objects only. More emphasis is on data rather procedure. 
+
+Advantages: 
+Data security 
+Inheritance 
+Code reusability 
+Flexible and abstraction is also present
+
+Parallel processing approach – 
+C/C++ also supports because of some library function.
+
+Functional programming
+Javascript
+
+
+Programming languages like JavaScript, Python, Ruby use interpreters. Programming languages like C, C++, Java use compilers.
+
+Interpreter translates just one statement of the program at a time into machine code. ... Compiler scans the entire program and translates the whole of it into machine readable format at once.
+
+Okay… but what does that actually mean?
+Imagine you have a halwa recipe that you want to make, but it's written in tamil. There are two ways you, a non-tamil speaker, could follow its directions.
+
+The first is if someone had already translated it into sourashtra for you. Then you can read and understand it. Think of this translated recipe as the compiled version.
+
+The second way is if you have a friend who knows tamil. When he is ready to make halwa, a sourashtra+tamil speaker sit next to him and translates the recipe into sourashtra as you go, line by line. In this case, your friend is the interpreter for the interpreted version of the recipe.
+
+
+python 
+
+Pros:
+
+Ease of use
+Multi-paradigm Approach
+Cons:
+
+Slow speed of execution compared to C,C++
+Absence from mobile computing and browsers
+
+assert 5 < 3, "5 is not smaller than 3"
+
+A lifetime of a namespace depends upon the scope of objects, if the scope of an object ends, the lifetime of that namespace comes to an end. Hence, it is not possible to access the inner namespace’s objects from an outer namespace.
+
+The ord() is a built-in function that returns the number representing the Unicode code of a specified character.
+
+isinstance("test", str)
+
+# taking multiple inputs at a time
+# and type casting using list() function
+x = list(map(int, input("Enter a multiple value: ").split()))
+print("List of students: ", x)
+
+x, y = [int(x) for x in input("Enter two value: ").split()]
+
+
+import time
+
+count_seconds = 3
+for i in reversed(range(count_seconds + 1)):
+	if i > 0:
+		print(i, end='>>>')
+		time.sleep(1)
+	else:
+		print('Start')
+
+So, the above code adds text without a trailing newline and then sleeps for one second after each text addition. At the end of the countdown, it prints Start and terminates the line. If you run the code as it is, it waits for 3 seconds and abruptly prints the entire text at once. This is a waste of 3 seconds caused due to buffering of the text chunk
+
+print: flush Argument
+The I/Os in python is generally buffered, meaning they are used in chunks. This is where flush comes in as it helps users to decide if they need the written content to be buffered or not. By default, it is set to false. If it is set to true, the output will be written as a sequence of characters one after the other. This process is slow simply because it is easier to write in chunks rather than writing one character at a time
+
+print: file Argument
+Contrary to popular belief, the print() function doesn’t convert the messages into text on the screen. These are done by lower-level layers of code, that can read data(message) in bytes. The print() function is an interface over these layers, that delegates the actual printing to a stream or file-like object. By default, the print() function is bound to sys.stdout through the file argument.
+
+string % modulo operator - operator overloaded
+print("Geeks : %2d, Portal : %5.2f" % (1, 05.333))
+
+print('{1} for {0}'.format('Geeks', 'Geeks'))
+print(f"{'Geeks'} for {'Geeks'}")
+print("Geeks :{0:2d}, Portal :{1:8.2f}".
+      format(12, 00.546))
+      
+tab = {'geeks': 4127, 'for': 4098, 'geek': 8637678}
+print('Geeks: {0[geeks]:d}; For: {0[for]:d}; '
+    'Geeks: {0[geek]:d}'.format(tab))
+    
+    
+# Printing Geeks in HEX
+String1 = "This is \x47\x65\x65\x6b\x73 in \x48\x45\x58"
+print("\nPrinting in HEX with the use of Escape Sequences: ")
+print(String1)
+
+# Using raw String to
+# ignore Escape Sequences
+String1 = r"This is \x47\x65\x65\x6b\x73 in \x48\x45\x58"
+print("\nPrinting Raw String in HEX Format: ")
+print(String1)
+
+
+# Formatting of Integers
+String1 = "{0:b}".format(16)
+print("\nBinary representation of 16 is ")
+print(String1)
+
+# Formatting of Floats
+String1 = "{0:e}".format(165.6458)
+print("\nExponent representation of 165.6458 is ")
+print(String1)
+
+# Rounding off Integers
+String1 = "{0:.2f}".format(1/6)
+print("\none-sixth is : ")
+print(String1)
+
+
+
+# String alignment
+String1 = "|{:<10}|{:^10}|{:>10}|".format('Geeks','for','Geeks')
+print("\nLeft, center and right alignment with Formatting: ")
+print(String1)
+
+# To demonstrate aligning of spaces
+String1 = "\n{0:^16} was founded in {1:<4}!".format("GeeksforGeeks", 2009)
+print(String1)
+
+
+# Importing random to generate
+# random string sequence
+import random
+
+# Importing string library function
+import string
+
+def rand_pass(size):
+	
+	# Takes random choices from
+	# ascii_letters and digits
+	generate_pass = ''.join([random.choice(
+						string.ascii_letters + string.digits)
+						for n in range(size)])
+						
+	return generate_pass
+
+# Driver Code
+password = rand_pass(10)
+print(password)
+	
+	
+Note – A set cannot have mutable elements like a list, set or dictionary, as its elements.  
+
+
+Frozen sets in Python are immutable objects that only support methods and operators that produce a result without affecting the frozen set or sets to which they are applied. While elements of a set can be modified at any time, elements of the frozen set remain the same after creation. 
+
+If no parameters are passed, it returns an empty frozenset.
+
+
+In Python, value of an integer is not restricted by the number of bits and can expand to the limit of the available memory 
+
+chr(number) : : This function converts number to its corresponding ASCII character.
+
+Byte objects are sequence of Bytes, whereas Strings are sequence of characters.
+Byte objects are in machine readable form internally, Strings are only in human readable form.
+Since Byte objects are machine readable, they can be directly stored on the disk. Whereas, Strings need encoding before which they can be stored on disk.
+
+
+# Python code to demonstrate String encoding
+
+# initialising a String
+a = 'GeeksforGeeks'
+
+# initialising a byte object
+c = b'GeeksforGeeks'
+
+# using encode() to encode the String
+# encoded version of a is stored in d
+# using ASCII mapping
+d = a.encode('ASCII')
+
+# checking if a is converted to bytes or not
+if (d==c):
+	print ("Encoding successful")
+else : print ("Encoding Unsuccessful")
+
+
+# Examples of Operator Precedence
+
+# Precedence of '+' & '*'
+expr = 10 + 20 * 30
+print(expr)
+
+# Precedence of 'or' & 'and'
+name = "Alex"
+age = 0
+	
+if name == "Alex" or name == "John" and age >= 2 :
+	print("Hello! Welcome.")
+else :
+	print("Good Bye!!")
+
+
+
+Operator Associativity: If an expression contains two or more operators with the same precedence then Operator Associativity is used to determine. It can either be Left to Right or from Right to Left.
+
+
+# Examples of Operator Associativity
+
+# Left-right associativity
+# 100 / 10 * 10 is calculated as
+# (100 / 10) * 10 and not
+# as 100 / (10 * 10)
+print(100 / 10 * 10)
+	
+# Left-right associativity
+# 5 - 2 + 3 is calculated as
+# (5 - 2) + 3 and not
+# as 5 - (2 + 3)
+print(5 - 2 + 3)
+	
+# left-right associativity
+print(5 - (2 + 3))
+	
+# only right-left associativity
+# 2 ** 3 ** 2 is calculated as
+# 2 ** (3 ** 2) and not
+# as (2 ** 3) ** 2
+print(2 ** 3 ** 2)
+
+
+
+# Python program to demonstrate ternary operator
+a, b = 10, 20
+
+# Use tuple for selecting an item
+# (if_test_false,if_test_true)[test]
+print( (b, a) [a < b] )
+
+# Use Dictionary for selecting an item
+print({True: a, False: b} [a < b])
+
+# lamda is more efficient than above two methods
+# because in lambda we are assure that
+# only one expression will be evaluated unlike in
+# tuple and Dictionary
+print((lambda: b, lambda: a)[a < b]())
+
+output: 10
+        10
+        10
+        
+        
+In Python, the “//” operator works as a floor division for integer and float arguments
+
+The Equality operator (==) compares the values of both the operands and checks for value equality. Whereas the ‘is’ operator checks whether both the operands refer to the same object or not.
+
+
+
+# Python program to illustrate the use
+# of 'is' identity operator
+x = 5
+if (type(x) is int):
+	print("true")
+else:
+	print("false")
+
+
+
+underscores in python
+
+_ returns the value of last executed expression value in Python Prompt/Interpreter
+
+For ignoring values:
+
+# Ignore a value of specific location/index
+for _ in range(10)
+	print ("Test")
+
+# Ignore a value when unpacking
+a,b,_,_ = my_method(var1)
+
+
+After a name (Convention)
+Python has their by default keywords which we can not use as the variable name. To avoid such conflict between python keyword and variable we use underscore after name
+
+
+Before a name
+Leading Underscore before variable/function/method name indicates to programmer that It is for internal use only, that can be modified whenever class want.
+
+Here name prefix by underscore is treated as non-public. If specify from Import * all the name starts with _ will not import. Python does not specify truly private so this ones can be call directly from other modules if it is specified in __all__, We also call it weak Private
+
+class Prefix:
+...	 def __init__(self):
+...			 self.public = 10
+...			 self._private = 12
+>>> test = Prefix()
+>>> test.public
+10
+>>> test._private
+12
+
+
+def public_api():
+	print ("public api")
+
+def _private_api():
+	print ("private api")
+
+
+>>> from class_file import *
+>>> public_api()
+public api
+
+>>> _private_api()
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name '_private_api' is not defined
+
+>>> import class_file
+>>> class_file.public_api()
+public api
+>>> class_file._private_api()
+private api
+
+
+__leading_double_underscore
+Leading double underscore tell python interpreter to rewrite name in order to avoid conflict in subclass.Interpreter changes variable name with class extension and that feature known as the Mangling.
+testFile.py
+
+
+class Myclass():
+	def __init__(self):
+		self.__variable = 10
+
+
+>>> import testFile
+>>> obj = testFile.Myclass()
+>>> obj.__variable
+Traceback (most recent call last):
+File "", line 1, in
+AttributeError: Myclass instance has no attribute '__variable'
+nce has no attribute 'Myclass'
+>>> obj._Myclass__variable
+10
+
+
+In Mangling python interpreter modify variable name with ___. So Multiple time It use as the Private member because another class can not access that variable directly. Main purpose for __ is to use variable/method in class only If you want to use it outside of the class you can make public api
+
+class Myclass():
+	def __init__(self):
+		self.__variable = 10
+	def func(self)
+		print (self.__variable)
+
+
+>>> import testFile
+>>> obj = testFile.Myclass()
+>>> obj.func()
+10
+
+
+
+__BEFORE_AFTER__
+Name with start with __ and ends with same considers special methods in Python. Python provide this methods to use it as the operator overloading depending on the user.
+
+Python provides this convention to differentiate between the user defined function with the module’s function
+
+class Player():
+    def __init__(self, age):
+        self.age = age
+    def __add__(self, b):
+        return self.age + b.age
+
+player1 = Player(10)
+player2 = Player(20)
+print(player1 + player2)
+
+
+__name__
+
+If the source file is executed as the main program, the interpreter sets the __name__ variable to have a value “__main__”. If this file is being imported from another module, __name__ will be set to the module’s name.
+
+immutable objects 
+
+numbers, strings, tuple
+
+
+
+
+list1 = [5, 4, 3, 2, 1]
+list2 = list1
+list1 += [1, 2, 3, 4]
+
+print(list1)    # [5, 4, 3, 2, 1, 1, 2, 3, 4]
+print(list2)    # [5, 4, 3, 2, 1, 1, 2, 3, 4]
+
+list1 = [5, 4, 3, 2, 1]
+list2 = list1
+list1 = list1 + [1, 2, 3, 4]
+
+# Contents of list1 are same as above
+# program, but contents of list2 are
+# different.
+print(list1)    # [5, 4, 3, 2, 1, 1, 2, 3, 4]
+print(list2)    # [5, 4, 3, 2, 1]
+
+
+
+Using else statement with while loops: As discussed above, while loop executes the block until a condition is satisfied. When the condition becomes false, the statement immediately after the loop is executed. 
+The else clause is only executed when your while condition becomes false. If you break out of the loop, or if an exception is raised, it won’t be executed
+
+for i in range(1, 4):
+	print(i)
+	break
+else: # Not executed as there is a break
+	print("No Break")
+
+
+Using zip(): zip() is used to combine 2 similar containers(list-list or dict-dict) printing the values sequentially. The loop exists only till the smaller container ends. A detailed explanation of zip() and enumerate() can be found here.
+
+# python code to demonstrate working of zip()
+
+# initializing list
+questions = ['name', 'colour', 'shape']
+answers = ['apple', 'red', 'a circle']
+
+# using zip() to combine two containers
+# and print values
+for question, answer in zip(questions, answers):
+	print('What is your {0}? I am {1}.'.format(question, answer))
+
+
+According to associativity and precedence in Python, all comparison operations in Python have the same priority, which is lower than that of any arithmetic, shifting or bitwise operation. 
+
+a < b < c is equivalent to a < b and b < c
+
+Unlike every other programming language we have used before, Python does not have a switch or case statement
+
+
+
+
+
+# demonstrating the use of start in enumerate
+
+cars = ["Aston" , "Audi", "McLaren "]
+for x in enumerate(cars, start=1):
+	print (x[0], x[1])
+
+output:
+(1, 'Aston')
+(2, 'Audi')
+(3, 'McLaren ')
+
+
+
+
+# Python program to demonstrate unzip (reverse
+# of zip)using * with zip function
+
+# Unzip lists
+l1,l2 = zip(*[('Aston', 'GPS'),
+			('Audi', 'Car Repair'),
+			('McLaren', 'Dolby sound kit')
+		])
+
+# Printing unzipped lists	
+print(l1)
+print(l2)
+
+
+
+
+# Function to check object
+# is iterable or not
+def iterable(obj):
+	try:
+		iter(obj)
+		return True
+		
+	except TypeError:
+		return False
+
+# Driver Code	
+for element in [34, [4, 5], (4, 5),
+			{"a":4}, "dfsdf", 4.5]:
+				
+	print(element, " is iterable : ", iterable(element))
+
+
+
+
+# Python code showing use of iter() using OOPs
+
+class Counter:
+	def __init__(self, start, end):
+		self.num = start
+		self.end = end
+
+	def __iter__(self):
+		return self
+
+	def __next__(self):
+		if self.num > self.end:
+			raise StopIteration
+		else:
+			self.num += 1
+			return self.num - 1
+			
+			
+# Driver code
+if __name__ == '__main__' :
+	
+	a, b = 2, 5
+	
+	c1 = Counter(a, b)
+	c2 = Counter(a, b)
+	
+	# Way 1-to print the range without iter()
+	print ("Print the range without iter()")
+	
+	for i in c1:
+		print ("Eating more Pizzas, couting ", i, end ="\n")
+	
+	print ("\nPrint the range using iter()\n")
+	
+	# Way 2- using iter()
+	obj = iter(c2)
+	try:
+		while True: # Print till error raised
+			print ("Eating more Pizzas, couting ", next(obj))
+	except:
+		# when StopIteration raised, Print custom message
+		print ("\nDead on overfood, GAME OVER")
+
+
+
+runtime import
+
+# importing numpy module
+# it is equivalent to "import numpy"
+np = __import__('numpy', globals(), locals(), [], 0)
+
+# array from numpy
+a = np.array([1, 2, 3])
+
+# prints the type
+print(type(a))
+
+
+# from numpy import complex as comp, array as arr
+np = __import__('numpy', globals(), locals(), ['complex', 'array'], 0)
+
+comp = np.complex
+arr = np.array
+
+
+
+range() : Python range function generates a list of numbers which are generally used in many situation for iteration as in for loop or in many other cases. In python range objects are not iterators. range is a class of a list of immutable objects. The iteration behavior of range is similar to iteration behavior of list in list and range we can not directly call next function. We can call next if we get an iterator using iter.
+
+range does not generates all numbers that it contains when we create it. It gives only those numbers which we get them using loop.
+
+
+class method
+
+A class method is a method which is bound to the class and not the object of the class.
+They have the access to the state of the class as it takes a class parameter that points to the class and not the object instance.
+It can modify a class state that would apply across all the instances of the class. For example it can modify a class variable that will be applicable to all the instances.
+
+
+
+static method
+
+A static method is also a method which is bound to the class and not the object of the class.
+A static method can’t access or modify class state.
+It is present in a class because it makes sense for the method to be present in class.
+
+
+
+
+python doesn’t support method overloading like C++ or Java
+
+so We generally use class method to create factory methods. Factory methods return class object ( similar to a parameterized constructor ) for different use cases.
+We generally use static methods to create utility functions
+
+
+check about corouting in geeksforgeeks
+
+
+A decorator is a function that takes a function as its only parameter and returns a function
+
+def greeting(func):
+    def welcome(name):
+        return "Welcome : " + func(name)
+    return welcome
+    
+@greeting
+def main(name):
+    return "Mr." + name
+    
+print(main("Manikandan"))
+
+
+# Python code to illustrate
+# Decorators with parameters in Python
+
+def decorator(*args, **kwargs):
+	print("Inside decorator")
+	
+	def inner(func):
+		
+		# code functionality here
+		print("Inside inner function")
+		print("I like", kwargs['like'])
+		
+		func()
+		
+	# reurning inner function
+	return inner
+
+@decorator(like = "geeksforgeeks")
+def my_func():
+	print("Inside actual function")
+
+
+class Base():
+    def __init__(self):
+        print("This is getting triggered when in absence of init method in derived class.")
+
+class Derived(Base):
+    pass
+
+derived = Derived()
+
+
+
+class Base():
+    def __init__(self):
+        print("This won't come.")
+
+class Derived(Base):
+    def __init__(self):
+        print("This is getting triggered when in absence of init method in derived class.")
+
+derived = Derived()
+
+
+
+What is object class?
+Like Java Object class, in Python (from version 3.x), object is root of all classes.
+
+In Python 3.x, “class Test(object)” and “class Test” are same.
+
+Python supports multiple inheritance
+
+class Base0():
+    def getname(self):
+        return "This will get printed."
+        
+class Base2():
+    def getname(self):
+        return "This won't."
+
+class Derived(Base0, Base2):    # Just because Base0 is in first place, this will get precedence always.
+    pass
+        
+derived = Derived()
+print(derived.getname())
+
+
+we should change the class variable only by using the class name, not with the object instance which will create a new variable with same name only for that particular instance so it shadows the class variable.
+
+class A():
+    name = "Mani"
+   
+a = A()
+print(a.name)   # Mani
+
+A.name = "Manikandan"
+
+b = A()
+print(b.name)   # Manikandan
+print(a.name)   # Manikandan
+
+
+Destructor
+
+# Python program to illustrate destructor
+class Employee:
+
+	# Initializing
+	def __init__(self):
+		print('Employee created.')
+
+	# Deleting (Calling destructor)
+	def __del__(self):
+		print('Destructor called, Employee deleted.')
+
+obj = Employee()
+del obj
+
+
+garbage collection
+
+
+
+# Python program to illustrate reflection
+def reverse(sequence):
+	sequence_type = type(sequence)
+	empty_sequence = sequence_type()
+	
+	if sequence == empty_sequence:
+		return empty_sequence
+	
+	rest = reverse(sequence[1:])
+	first_sequence = sequence[0:1]
+	
+	# Combine the result
+	final_result = rest + first_sequence
+	
+	return final_result
+
+# Driver code
+print(reverse([10, 20, 30, 40]))
+print(reverse("GeeksForGeeks"))
+
+
+
+A callable means anything that can be called. For an object, determines whether it can be called. A class can be made callable by providing a __call__() method. The callable() method returns True if the object passed appears callable. If not, it returns False.
+
+
+https://www.geeksforgeeks.org/metaprogramming-metaclasses-python/
+
+
+
+def decorator(func):
+	def wrapper(*args, **kwargs):
+		"""A wrapper function"""
+		# Extend some capabilities of func
+		func()
+	return wrapper
+
+@decorator
+def first_function():
+	"""This is docstring for first function"""
+	print("first function")
+
+@decorator
+def second_function(a):
+	"""This is docstring for second function"""
+	print("second function")
+
+print(first_function.__name__)
+print(first_function.__doc__)
+print(second_function.__name__)
+print(second_function.__doc__)
+
+output:
+
+wrapper
+A wrapper function
+wrapper
+A wrapper function
+
+print("First Function")
+help(first_function)
+
+print("\nSecond Function")
+help(second_function)
+
+output:
+
+First Function
+Help on function wrapper in module __main__:
+
+wrapper(*args, **kwargs)
+    A wrapper function
+
+Second Function
+Help on function wrapper in module __main__:
+
+wrapper(*args, **kwargs)
+    A wrapper function
+    
+''' Ideally it should show the name and docstring of first function & second function  
+    Instead of wrapper function '''
+    
+# so to fix this use @wraps()
+
+from functools import wraps
+
+def a_decorator(func):
+	@wraps(func)
+	def wrapper(*args, **kwargs):
+		"""A wrapper function"""
+
+		# Extend some capabilities of func
+		func()
+	return wrapper
+
+@a_decorator
+def first_function():
+	"""This is docstring for first function"""
+	print("first function")
+
+@a_decorator
+def second_function(a):
+	"""This is docstring for second function"""
+	print("second function")
+
+print(first_function.__name__)
+print(first_function.__doc__)
+print(second_function.__name__)
+print(second_function.__doc__)
+
+output:
+
+first_function
+This is docstring for first function
+second_function
+This is docstring for second function
+
+print("First Function")
+help(first_function)
+
+print("\nSecond Function")
+help(second_function)
+
+output:
+
+First Function
+Help on function first_function in module __main__:
+
+first_function()
+    This is docstring for first function
+
+
+Second Function
+Help on function second_function in module __main__:
+
+second_function(a)
+    This is docstring for second function
+    
+
+
+decorators applied on base class wont be passed to its subclass.
+
+
+
+
+# Here we defines what to print before executing any function
+def addinfo(value): # value is function
+    
+    def wrapper(*a, **b):
+        if (value.__name__.startswith('__')):
+            print(value.__doc__)
+        else:
+            print(value.__qualname__, "called")
+        return value(*a, **b)
+        
+    return wrapper # return some other function instead of returning actual function: value
+
+# Here vars(cls) is used to get all the declared parameters of its given input
+def debug(cls):
+    for key, value in vars(cls).items():
+        if (callable(value)):
+            setattr(cls, key, addinfo(value)) # reseting function definitions of that class
+    return cls
+
+# Metaclasses are responsible for creating any class in python    
+class Metaclass(type): # type is the default metaclass used by python
+    
+    # Will get called when we create instance of its derived class
+    def __new__(cls, clsname, bases, clsdict):
+        o = super().__new__(cls, clsname, bases, clsdict)
+        o = debug(o)
+        return o
+        
+class LivingBeing(metaclass = Metaclass):
+    
+    def __init__(self, gender, age, name = 'NA'):
+        '''Living Organism Initialized'''
+        self.name = name
+        self.gender = gender
+        self.age = age
+        
+    def getgender(self):
+        return self.gender
+        
+    def getname(self):
+        return self.name
+        
+    def getage(self):
+        return self.age
+        
+    def __str__(self):
+        '''Printing Living Being'''
+        return (self.name + " " if (self.name != 'NA') else "") + self.gender + " " + str(self.age)
+
+class Lion(LivingBeing):
+    
+    def power(self):
+        return "More powerful than humans"
+        
+lion = Lion("M", 27)
+print(lion)
+
+
+
+
+
+
+
+
+try:
+       # Some Code.... 
+
+except (Error1, Error2):
+       # optional block
+       # Handling of exception (if required)
+
+else:
+       # execute if no exception
+
+finally:
+      # Some code .....(always executed)
+      
+      
+Collections:
+
+* counter - subclass of dict - present in collections module
+
+# A Python program to show different ways to create
+# Counter
+from collections import Counter
+
+# With sequence of items
+print(Counter(['B','B','A','B','C','A','B','B','A','C']))
+
+# with dictionary
+print(Counter({'A':3, 'B':5, 'C':2}))
+
+# with keyword arguments
+print(Counter(A=3, B=5, C=2))
+
+
+
+OrderedDict:
+
+# A Python program to demonstrate working of OrderedDict
+from collections import OrderedDict
+
+print("This is a Dict:\n")
+d = {}
+d['a'] = 1
+d['b'] = 2
+d['c'] = 3
+d['d'] = 4
+
+for key, value in d.items():
+	print(key, value)
+
+print("\nThis is an Ordered Dict:\n")
+od = OrderedDict()
+od['a'] = 1
+od['b'] = 2
+od['c'] = 3
+od['d'] = 4
+
+for key, value in od.items():
+	print(key, value)
+
+# Ordered Dict can be used as a stack with the help of popitem function
+
+
+# Commonly In Dictionary, the key must be unique and immutable. This means that a Python Tuple can be a key whereas a Python List can not
+
+
+DefaultDict:
+
+# The functionality of both dictionaries and defualtdict are almost same except for the fact that defualtdict never raises a KeyError, generally this error will be thrown when we try to fetch the value of some property which is not present in dictionary.
+
+
+# Python program to demonstrate
+# defaultdict
+
+
+from collections import defaultdict
+
+
+# Function to return a default
+# values for keys that is not
+# present
+def def_value():
+	return "Not Present"
+	
+# Defining the dict
+d = defaultdict(def_value)
+d["a"] = 1
+d["b"] = 2
+
+print(d["a"])
+print(d["b"])
+print(d["c"])
+
+
+
+
+ChainMap:
+
+# Please select Python 3 for running this code in IDE
+# Python code to demonstrate ChainMap and
+# reversed() and new_child()
+
+# importing collections for ChainMap operations
+import collections
+
+# initializing dictionaries
+dic1 = { 'a' : 1, 'b' : 2 }
+dic2 = { 'b' : 3, 'c' : 4 }
+dic3 = { 'f' : 5 }
+
+# initializing ChainMap
+chain = collections.ChainMap(dic1, dic2)
+
+# printing chainMap using map
+print ("All the ChainMap contents are : ")
+print (chain.maps)
+
+# using new_child() to add new dictionary
+chain1 = chain.new_child(dic3)
+
+# printing chainMap using map
+print ("Displaying new ChainMap : ")
+print (chain1.maps)
+
+# displaying value associated with b before reversing
+print ("Value associated with b before reversing is : ",end="")
+print (chain1['b'])
+
+# reversing the ChainMap
+chain1.maps = reversed(chain1.maps)
+
+# displaying value associated with b after reversing
+print ("Value associated with b after reversing is : ",end="")
+print (chain1['b'])
+
+
+Output:
+
+All the ChainMap contents are : 
+[{'b': 2, 'a': 1}, {'b': 3, 'c': 4}]
+Displaying new ChainMap : 
+[{'f': 5}, {'b': 2, 'a': 1}, {'b': 3, 'c': 4}]
+Value associated with b before reversing is : 2
+Value associated with b after reversing is : 3
+
+# Note : Notice the key named “b” exists in both dictionaries, but only first dictionary key is taken as key value of “b”. Ordering is done as the dictionaries are passed in function.
+
+
+
+NamedTuple
+
+# Python code to demonstrate namedtuple()
+	
+from collections import namedtuple
+	
+# Declaring namedtuple()
+Student = namedtuple('Student',['name','age','DOB'])
+	
+# Adding values
+S = Student('Nandini','19','2541997')
+	
+# Access using index
+print ("The Student age using index is : ",end ="")
+print (S[1])
+	
+# Access using name
+print ("The Student name using keyname is : ",end ="")
+print (S.name)
+
+
+
+
+
+Deque (Doubly Ended Queue) in Python is implemented using the module “collections“. Deque is preferred over list in the cases where we need quicker append and pop operations from both the ends of container, as deque provides an O(1) time complexity for append and pop operations as compared to list which provides O(n) time complexity.
+
+
+UserString
+
+
+# Python program to demonstrate
+# userstring
+
+
+from collections import UserString
+
+Python supports a String like a container called UserString present in the collections module. This class acts as a wrapper class around the string objects. This class is useful when one wants to create a string of their own with some modified functionality or with some new functionality. It can be considered as a way of adding new behaviors for the string. This class takes any argument that can be converted to string and simulates a string whose content is kept in a regular string
+
+# Creating a Mutable String
+class Mystring(UserString):
+	
+	# Function to append to
+	# string
+	def append(self, s):
+		self.data += s
+		
+	# Function to rmeove from
+	# string
+	def remove(self, s):
+		self.data = self.data.replace(s, "")
+	
+# Driver's code
+s1 = Mystring("Geeks")
+print("Original String:", s1.data)
+
+# Appending to string
+s1.append("s")
+print("String After Appending:", s1.data)
+
+# Removing from string
+s1.remove("e")
+print("String after Removing:", s1.data)
+
+
+
+UserList
+
+Python supports a List like a container called UserList present in the collections module. This class acts as a wrapper class around the List objects. This class is useful when one wants to create a list of their own with some modified functionality or with some new functionality. It can be considered as a way of adding new behaviors for the list. This class takes a list instance as an argument and simulates a list that is kept in a regular list
+
+
+# Python program to demonstrate
+# userlist
+
+
+# Python program to demonstrate
+# userlist
+
+
+from collections import UserList
+
+
+# Creating a List where
+# deletion is not allowed
+class MyList(UserList):
+	
+	# Function to stop deletion
+	# from List
+	def remove(self, s = None):
+		raise RuntimeError("Deletion not allowed")
+		
+	# Function to stop pop from
+	# List
+	def pop(self, s = None):
+		raise RuntimeError("Deletion not allowed")
+	
+# Driver's code
+L = MyList([1, 2, 3, 4])
+
+print("Original List")
+
+# Inserting to List"
+L.append(5)
+print("After Insertion")
+print(L)
+
+# Deleting From List
+L.remove()
+
+
+UserDict
+
+Python supports a dictionary like a container called UserDict present in the collections module. This class acts as a wrapper class around the dictionary objects. This class is useful when one wants to create a dictionary of their own with some modified functionality or with some new functionality. It can be considered as a way of adding new behaviors for the dictionary. This class takes a dictionary instance as an argument and simulates a dictionary that is kept in a regular dictionary
+
+# Python program to demonstrate
+# userdict
+
+
+from collections import UserDict
+
+
+# Creating a Dictionary where
+# deletion is not allowed
+class MyDict(UserDict):
+	
+	# Function to stop deletion
+	# from dictionary
+	def __del__(self):
+		raise RuntimeError("Deletion not allowed")
+		
+	# Function to stop pop from
+	# dictionary
+	def pop(self, s = None):
+		raise RuntimeError("Deletion not allowed")
+		
+	# Function to stop popitem
+	# from Dictionary
+	def popitem(self, s = None):
+		raise RuntimeError("Deletion not allowed")
+	
+# Driver's code
+d = MyDict({'a':1,
+	'b': 2,
+	'c': 3})
+
+print("Original Dictionary")
+print(d)
+
+d.pop(1)
+
+
+
+
+heap:
+
+# Python code to demonstrate working of
+# nlargest() and nsmallest()
+
+# importing "heapq" to implement heap queue
+import heapq
+
+# initializing list
+li1 = [6, 7, 9, 4, 3, 5, 8, 10, 1]
+
+# using heapify() to convert list into heap
+heapq.heapify(li1)
+
+# using nlargest to print 3 largest numbers
+# prints 10, 9 and 8
+print("The 3 largest numbers in list are : ",end="")
+print(heapq.nlargest(3, li1))
+
+# using nsmallest to print 3 smallest numbers
+# prints 1, 3 and 4
+print("The 3 smallest numbers in list are : ",end="")
+print(heapq.nsmallest(3, li1))
+
+
+
+np.random.rand
+# generate samples from uniform distribution of 0 to 1
+
+np.random.randn
+# generate samples from normal distribution of 0 to 1
+
+xs - cross section method - df.xs(any_cell_value, level = 'any_level_name')
+# generally been used in multilevel indexing in pandas
+# without level parameter, xs used to work as like loc method
+
+%matplotlib inline
+# will give you the option to avoid writing plt.show() to print everytime
+
+fig = plt.figure()
+axes = fig.add_axes([0.1, 0.2, 0.8, 0.7])
+# above four points in list signifies that show plot 10% away from the left side of white canvas, 20% away from the bottom of white canvas, 80% width of white canvas, 70% height of white canvas. 
+
+
+
+There are two module in python with which you can use threads 
+_thread (low level threading api)
+threading module provides an easier to use and higher-level threading API built on top of _thread module.
+
+mutex = _thread.allocate_lock() # returns new lock object
+
+def my_print(parameter1, parameter2):
+	for i in range(parameter2):
+		mutex.acquire()			# locks this object: my_print
+		print(parameter1, i)
+		mutex.release()			# releases this object: mutex
+								# continue running with same thread
+								# time.sleep(1)
+								# will hold the execution of the current thread for 1 second
+								
+for i in range(5):
+	_thread.start_new_thread(my_print, (i, 5)) 
+								# creates new thread, no guarantee in ordering
+								
+flatten always returns a copy. ravel returns a view of the original array whenever possible. This isn't visible in the printed output, but if you modify the array returned by ravel, it may modify the entries in the original array. If you modify the entries in an array returned from flatten this will never happen
+
+def test():
+    try:
+        return 1
+    finally:
+        print("Still it prints before returning")
+        
+print(test())

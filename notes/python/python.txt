@@ -1,0 +1,1443 @@
+# Anaconda
+'''
+Anaconda is a python and R distribution. It aims to provide everything you need (python wise) for data science "out of the box".
+It includes:    core python language, 100+ python "packages" (libraries), Spyder (IDE/editor - like pycharm) and Jupyter
+                conda, Anaconda's own package manager, used for updating Anaconda and packages  
+'''
+
+
+# Commands
+''' 
+Run python script in command line:
+python filename.extension
+'''
+
+# Basics
+'''
+Write python code directly in command line (python interpreter):
+1:	python (Enter)
+2: 	write code there...
+
+quit()	-	quits you from the python interpreter
+
+Recommended notebook:
+Jupyter
+
+Recommended editor:
+Sublime text
+
+data type Picture.1 
+'''
+
+# Declaration of variables
+'''
+'''
+int_variable    = 100
+str_variable    = 'manikandan'
+none_variable   = None
+true_variable   = True
+false_variabe   = False
+list_variable   = ['m','a','n','i','k','a','n','d','a','n']
+dict_variable   = {'key' : 'value'}
+set_variable    = {'m','a','n','i','k','d'}
+
+
+print('\
+int_variable    = 100\n\
+str_variable    = "manikandan"\n\
+none_variable   = None\n\
+true_variable   = True\n\
+false_variabe   = False\n\
+list_variable   = ["m","a","n","i","k","a","n","d",","a","n"]\n\
+dict_variable   = {"key" : "value"}\n\
+set_variable   = {"m","a","n","i","k","d"}')
+
+print('variables declared\n')
+
+# Logical operators 
+'''
+and or not
+'''
+
+# Math
+'''
+'''
+
+print("2**3 = {}".format(2**3))    # 8
+
+print("")
+
+# Typeof
+'''
+'''
+
+print("Type of int_variable is {}".format(type(int_variable)))  # <type 'int'>
+
+# String
+'''
+immutable in python (can't change)
+str_variable[0] = 'M'	# throws error  
+'''
+
+print("str_variable = {}".format(str_variable))                 # manikandan   
+
+print("str_variable[:]  = {}".format(str_variable[:]))          # manikandan
+
+print("str_variable[::] = {}".format(str_variable[::]))         # manikandan
+
+''' 
+specifies step size    
+'''
+
+print("str_variable[::1]    = {}".format(str_variable[::1]))	   # manikandan
+
+print("str_variable[::2]    = {}".format(str_variable[::2]))	   # mnkna
+
+''' 
+reverse  
+'''
+
+print("str_variable[::-1]   = {}".format(str_variable[::-1]))	   # nadnakinam												
+
+print("str_variable[-1] = {}".format(str_variable[-1]))            # n            
+
+print("str_variable[2:] = {}".format(str_variable[2:]))            # nikandan
+
+print("str_variable[:3] = {}".format(str_variable[:3]))            # man
+
+print("str_variable[2:6]    = {}".format(str_variable[2:6]))       # nika
+
+'''
+operations
+'''
+
+print("str_variable + str_variable  = {}".format(str_variable + str_variable))       # manikandanmanikandan
+
+print("str_variable * 2 = {}".format(str_variable * 2))            # manikandanmanikandan
+
+'''
+str to list
+'''
+
+print("str_variable.split() = {}".format(str_variable.split()))          # ['m','a','n','i','k','a','n','d','a','n']
+
+print("str_variable.split('i') = {}".format(str_variable.split('i')))    # ['man', 'kandan']
+					
+'''
+format print
+{value: width.precision f}
+print(str_variable + ' is my {} {}'.format('name'))	    # error
+print(str_variable + ' is my {} {0}'.format('name'))	# error (automatic indexing + manual indexing)
+print(str_variable + ' is my {a} {b} {pi:1.2}'.format(a = 'name', b = 'test', pi = mainPi))	# error
+print(str_variable + ' is my {a} {b} @ {pi:1.}'.format(a = 'full', b = 'name', pi = 3.14))	# error
+'''
+
+print("")
+
+print('\
+where\n\
+a   = "name"\n\
+b   = "manikandan"\n\
+pi  = 3.14\n\
+i   = int_variable\n')
+
+print('str_variable is my {0} {0}   = ' + (str_variable) + (' is my {0} {0}'.format('name')))	# manikandan is my name name
+
+print('str_variable is my {0} {1}   = ' + (str_variable) + (' is my {0} {1}'.format('full', 'name')))	# manikandan is my full name
+
+print('str_variable is my {a} {b}   = ' + (str_variable) + (' is my {a} {b}'.format(a = 'full', b = 'name')))	# manikandan is my full name
+
+print('str_variable is my {a} {b} @ {pi:1}  = ' + (str_variable) + (' is my {a} {b} @ {pi:1}'.format(a = 'full', b = 'name', pi = 3.14)))	# manikandan is my full name @ 3
+
+print('str_variable is my {a} {b} @ {pi:3}  = ' + (str_variable) + (' is my {a} {b} @ {pi:3}'.format(a = 'full', b = 'name', pi = 3.14)))	# manikandan is my full name @   3
+
+print('str_variable is my {a} {b} @ {pi:1.2f}  = ' + (str_variable) + (' is my {a} {b} @ {pi:1.2f}'.format(a = 'full', b = 'name', pi = 3.14)))	# manikandan is my full name @ 3.14
+
+print('{i:1.2f} = ' + ('{i:1.2f}'.format(i = int_variable)))	# 100.00
+
+# F Strings	
+'''  
+print(f'{str_variable} is {int_variable}')  # manikandan is 100
+'''
+
+'''	
+%s injects strings 
+%r injects exactly
+'''
+
+print("i am %s" %'manikandan')	# i am manikandan
+
+print("i am %s %s" %('manikandan', '...')) # i am manikandan ...
+
+print("i am %r" %('manikandan'))	# i am 'manikandan'
+
+print('{1:50} ***'.format('manikandan', 'content'))    # content                                      *** 
+
+print('{0:+<10} {1:-^10}'.format('mani', 'kandan'))  # mani++++++ --kandan---
+	
+# Methods
+'''
+length
+'''
+print("len(list_variable)   = ".format(len(list_variable))) # 10
+
+'''
+special values	
+None - which is similiar as undefined in javascript
+'''
+
+# Dictionaries
+'''
+Objects retrieved by key name
+Unordered & can't be sorted
+'''
+'''
+return type: List
+'''
+
+print("dict_variable.keys() = {}".format(dict_variable.keys()))       # [key]
+
+print("dict_variable.values() = {}".format(dict_variable.values()))   # [value]
+
+print("dict_variable.items() = {}".format(dict_variable.items()))     # [('key': 'value')]
+
+# List
+'''
+Objects retrieved by location
+Ordered sequence can be indexed or sliced
+'''
+
+# Tuple 
+'''
+similiar to list but immutable
+'''
+
+# Set
+'''
+Unordered collection with unique elements
+set_variable = set()
+'''
+	
+set_variable.add(1)
+	
+# File
+'''    
+Write file in Jupyter
+%% writefile file.txt
+this is the first line
+this is the second line
+file = open('file.txt')
+file.read()	# returns string with escape sequences
+			# also works like iterator
+file.read()	# returns empty string now
+file.seek(0)# again set back to its initial location
+file.read()	# returns string again
+file.seek(0)
+file.readlines()# returns list of strings
+				# each line in string along with escape sequence
+file.close()	# in order to avoid errors
+				# synchronised
+'''
+
+# Advance File
+'''
+In order to avoid this manual file close 
+you can do like this 
+	
+with open('filePath') as var_name:
+	# your code goes here
+# this will take care of closing your file
+with open('filePath', mode = 'r') as var_name:
+	# read mode
+with open('filePath', mode = 'w') as var_name:
+	# var_name.write("new content") (overwrite content or create file new)
+with open('filePath', mode = 'a') as var_name:
+	# append mode only (appends new content)
+    # picture.2  file modes
+'''
+
+# command 
+'''
+pwd - print working directory
+'''
+
+'''
+d/b sorted() and sort()
+where
+    sort()  -   sorts list actually, without returning anything
+    sorted()-   returns sorted list, without altering original list
+'''
+list_variable.sort()		
+list_variable   = sorted(list_variable)
+
+# Logical operators
+'''
+1 < 2 > 3	or	1 < 2 and 2 > 3
+# both works same
+'''
+	
+# Control statement
+'''
+if condition:
+	# your code goes here
+	# indentation is must
+elif condition:
+	# your elif code
+else:
+	# your else code 
+'''
+		
+# for loop
+'''
+list 	= [(1,2)]
+	
+for num in list_variable:
+	# indentation
+	# your code 
+(or)
+
+for num in list:
+	# indentation
+	# your code 
+(or)
+
+for (a, b) in list_variable:
+	# indentation
+	# your code		
+(or)
+
+for (key, value) in dict_variable.items():
+	# your code
+'''
+	
+# Indentation key in python
+'''
+code:
+sum = 0
+for a in list
+	sum += a
+print(sum)
+
+output:
+6
+
+code:
+sum = 0
+for a in list		# iterator, indirectly for loop calls iter(list)
+	sum += a
+	print(sum)
+
+output:
+1
+3
+6
+'''
+
+# Jumping statement
+# break
+# continue
+
+# pass	- Does nothing at all
+'''
+for a in list:
+	pass
+'''
+	
+# Operators in python
+# Range
+'''
+range()	- returns list
+	
+for a in range(10):
+	print(a)
+# prints 1 to 10
+
+range(10) or range(1, 10) or range(1, 10, 1)
+# all gives same in above code
+'''
+
+# Enumerate
+'''
+enumerate()
+
+for item in enumerate('mani'):
+	print(item)
+# prints 	(0, 'm')	# tuple
+			(1, 'a')
+			(2, 'n')
+			(3, 'i')			
+'''
+
+# Zip
+'''			
+zip()	- takes n number of arguments and groups it
+		  binds with same amount from everything
+'''
+
+# List
+'''		  
+list1 = [1, 2, 3, 10]
+list2 = [4, 5, 6]
+for item in zip(list1, list2):
+	print(item)
+# prints 	(1, 4)	# tuple
+			(2, 5)
+			(3, 6)	
+
+min(list)
+max(list)			
+'''
+
+# Condition checking
+'''
+'a in ['a', 'b', 'c']
+'''
+	
+# Shuffle
+'''
+from random import shuffle
+shuffle(list)
+# shuffle list, not returns anything
+'''
+
+# Random
+'''
+from random import randint
+randint(1, 100)
+# returns integer randomly
+'''
+
+# Input
+'''
+str_variable   = input('Enter any')
+float_variable = float(str_variable)
+int_variable   = int(str_variable)
+'''
+
+# List comphrehension
+'''
+list = []
+for a in 'mani':
+	list.append(a)
+or
+
+list = [a for a in 'mani']
+or 
+
+list = [(expression) for a in 'mani' if condition]
+or
+
+list = [(expression) if condition else (expression) for a in 'mani']
+
+for a in [1, 2, 3]
+	for b in [2, 4, 6]
+		list.append(a*b)
+or
+
+list = [a*b for a in [1, 2, 3] for b in [2, 4, 6]]
+'''
+
+# Functions
+"""
+def function_name():
+	'''
+	(optional)
+	documentation goes here
+	which will be helpful on future reference
+	'''
+	#code goes here
+	
+*args && **kwargs
+arguments & keyword arguments
+you can use any name instead of args, but by convention use args variable for this
+
+def func(*args):
+	print(args)	# type tuple
+				# can access n number of arguments
+
+def kwfunc(**kwargs):	
+	print(kwargs)	# type dictionary
+
+func(10, 20, 30)
+kwfunc(a = 10, b = 20, c = 30)
+"""
+
+# List -> String
+'''
+'delimiter'.split(list)
+'''
+
+# Lambda
+'''
+square = lambda a : a*a
+'''
+
+# Global
+'''
+global a
+a = 10
+def func():
+	global a	# ask compiler to access global variable
+	# any code goes here
+	a = 20
+print(a)	# 10
+func()
+print(a)	# 20
+'''
+
+# Class
+'''
+dont need to create __init__ method, 
+unless you have seperate member variable
+
+class Animal():
+	def __init__(self, isPet):
+		self.isPet = isPet
+tiger = Animal(False)
+'''
+
+# INHERITANCE
+'''
+class Puppy(Animal)	# extending animal 
+	species = 'DOG'	# ways to access this class object attribute
+					# Puppy.species	(or)	self.species
+	def __init__(self):
+		Animal.__init(self, True)
+		
+puppy = Puppy()
+'''
+	
+    
+# Delete
+'''
+To delete variables from scope
+	del var_name
+'''
+	
+# Special methods
+'''
+__method-name__	# used to be in this format
+
+class Article():
+	def __init__(self, name):
+		self.name = name
+	def getName(self):
+		return self.name		
+class Book():
+	def __init__(self, name):
+		self.name = name
+	def getName(self):
+		return self.name
+	def __len__(self):
+		return len(self.name)
+    # only predefined methods allowed to use in this fashion
+    # special methods, looks like adding behaviour to predefined methods
+	def __del__():
+		print("Book has been deleted")
+			
+article = Article("article name")
+article.getName()	# article name
+len(article)		# error
+del article
+print(article)		# error, article has not found
+	
+book = Book("book name")
+book.getName()	# book name
+len(book)		# 9
+del book		# Book has been deleted
+				# Predefined behaviour will also executed
+print(book)		# error, book has not found
+'''	
+	
+# Modules & Packages
+'''	
+Modules is nothing but python script
+myModule.py	# python script is module 
+
+Packages is nothing but folder or directory
+It should have __init__.py file inside it as a seperate file
+It can hold multiple modules along with it.
+	
+Folder structure
+
+	-	MainPackage
+		-	__init__.py	# this file is mandatory, which will help python compiler
+						  to treat this directory as a package
+						# it can be empty
+		-	mySomeMainScript.py
+		-	SubPackage
+			-	__init__.py
+			-	mySomeSubScirpt.py
+				
+	-	myModule.py
+	-	myProgram.py
+	
+	myModule.py
+	
+		def myFunc():
+			print("Do Something")
+			
+	myProgram.py
+		
+		from myModule import myFunc
+		from MainPackage import mySomeMainScript
+		from MainPackage.SubPackage import mySomeSubScirpt
+		
+		myFunc()	# Do Something
+		mySomeMainScript.someMethod()
+		mySomeSubScirpt.someOtherMethod()
+'''
+
+# __name__
+'''
+Things to note:
+python compiler background operation
+1. first it executes all 0 level indentation code	
+2. set a variable __name__ = '__main__'	(when you execute script directly, ie. python one.py)
+# __name__ which will help you to distinguish whether script called directly or imported by 
+		
+    one.py
+
+        print("Executed first")
+        if __name__ == '__main__':
+            print("script running directly")
+        else:
+            print("imported by some other script")
+'''
+
+# Exception handling
+'''
+try 
+except
+finally
+'''
+
+print('')
+print('Do you want to test exception handling')
+    
+while True:
+    choice = input('Enter Y/N ?')
+    if choice != 'N' and choice != 'n':
+        pass
+    else:
+        break
+    print('Now we are going to add number with int_variable')
+    local_variable = input('Enter value of your input')
+    try:
+        local_variable = int(local_variable)
+        int_variable = int_variable + local_variable
+    except:
+        print('Incorrect type of input')
+        continue
+    else:
+        # else block to except
+        break
+    finally:
+        print('Looks you are doing great, Always.')
+        print('Do you want to continue ?')
+ 
+# Decorators
+'''
+allows you to tack on extra functionality to an already existing function_name
+'''
+
+# (decorator, behind the scenes)
+def greet():
+    print('welcome')
+
+def custom_decorator(func):
+    greet()
+    func()
+    # Do something
+
+def custom_notice():
+    print('looks like you are enjoying')
+    
+custom_decorator(custom_notice)
+
+# actual usage
+def greet():
+    print('welcome')
+
+def custom_decorator():
+    greet()
+    # Do something
+
+@custom_decorator
+def custom_notice():
+    print('looks like you are enjoying')
+    
+custom_notice()
+
+# Generators
+'''
+generator functions allows us to write a function that can send back a value and
+then later resume to pick up where it left off
+memory efficient
+next(generatorObject)   -   returns next value
+even strings works in similiar fashion
+iterator_object = iter(str_variable)
+next(iterator_object)
+'''
+def cube_values(limit):
+    list = []
+    for a in range(limit):
+        list.append(a**3)
+    return list
+    
+print('Cube values')
+
+print(cube_values(10))
+
+def square_values(limit):
+    for a in range(limit):
+        yield a**2
+        
+print('Square values')
+
+square_values(10)                   # Generator object
+a = square_values(10)               # next(a) will work for next value & return accordingly
+print(list(square_values(10)))      # converts generator object in to list and returns
+
+
+'''
+both works similiarly
+'''
+for a in cube_values(10)
+    print(a)
+      
+for a in square_values(10)
+    print(a)    # but this happens on demand
+    
+# numbers methods
+'''
+hex(..)
+bin(..)
+pow(2, 3)       # equivalent to   2**3
+pow(2, 3, 2)    # equivalent to   (2**3) % 2
+abs(..)
+round(..)       # rounds & returns float
+round(2.145, 2) # second argument specifies precision
+'''  
+
+# string methods
+'''
+capitalize()
+lower()
+upper()
+count('a')
+find('a')
+center(int_variable, 'a')   # centers string with this character of length int_variable
+endswith('o')
+split('a')
+str_variable.split('a')     # ['m', 'nik', 'nd', 'n']
+'hhahh'.split('h')          # ['', '', 'a', '', '']
+partition('a')              # ['m', 'a', 'nikandan']
+'''
+
+# set methods
+'''
+add(1)
+copy()
+clear()
+difference(anotherSet)          # won't change existing set
+                                # return type set
+difference_update(anotherSet)   # affects existing set
+                                # return type none
+discard(int_variable)
+intersection(..)
+intersection_update(..)        
+isdisjoint(..)                  # check all elements distinct from two sets 
+                                # if distinct returns true else false
+issubset(..)
+issuperset(..)
+union(..)
+update(..)
+'''
+
+# dictionary methods
+'''
+{x: x**2 for x in range(3)}    # {0: 0, 1: 1, 2: 4}
+iterkeys()
+viewkeys()                     # dict_keys([])
+viewvalues()
+'''
+
+# list methods
+'''
+append()
+count()
+extend(..)
+index()                         # if returns index else error
+insert(index, content)
+pop()
+pop(index)
+remove(content)
+reverse()
+sort()
+'''
+
+# keywords
+'''
+'''
+
+print(' ' is ' ')	# checks whether both objects take same memory location or not
+
+# multiple statements per line
+'''
+'''
+
+a = 1; b = 2; c = 3	(or)
+a, b, c = 1, 2, 3
+
+# global & nonlocal
+'''
+global keyword points to global variable directly
+whereas nonlocal points to variable (which is in outer function)
+'''
+
+print("test") print("same line")
+print("x =", x) 
+# code for disabling the softspace feature  
+print('G', 'F', 'G', sep ='') 
+# using end argument 
+print("Python", end = '@')   
+print("GeeksforGeeks") 
+
+# Creating a Tuple 
+# with the use of loop 
+Tuple1 = ('Geeks') 
+n = 5
+print("\nTuple with a loop") 
+for i in range(int(n)): 
+    Tuple1 = (Tuple1,) 
+    print(Tuple1) 
+	
+Tuple with a loop
+('Geeks',)
+(('Geeks',),)
+((('Geeks',),),)
+(((('Geeks',),),),)
+((((('Geeks',),),),),)
+
+
+easy way to swap variable
+a, b = b, a
+
+underscore in python
+https://www.geeksforgeeks.org/underscore-_-python/
+
+Syntax: print(value(s), sep= ‘ ‘, end = ‘\n’, file=file, flush=flush)	
+default: end = '\n'
+	
+# array 
+a = [1, 2, 3, 4] 
+  
+# printing a element in same 
+# line 
+for i in range(4): 
+    print(a[i], end =" ") 
+	
+# array # throws error, invalid syntax
+a = [1, 2, 3, 4] 
+b = int(x) for x in a  
+print(next(b))
+
+# array # return 1
+a = [1, 2, 3, 4] 
+b = (int(x) for x in a)  # returns generator object
+print(next(b))
+
+
+
+#code for disabling the softspace feature 
+print('G','F','G', sep='') 
+  
+#for formatting a date 
+print('09','12','2016', sep='-') 
+  
+#another example 
+print('pratik','geeksforgeeks', sep='@') 
+
+
+Output:
+
+
+GFG
+09-12-2016
+pratik@geeksforgeeks
+
+
+#n provides new line after printing the year 
+print('09','12', sep='-', end='-2016n') 
+
+
+# Creating a Tuple  
+# with repetition 
+Tuple1 = ('Geeks',) * 3
+print("\nTuple with repetition: ") 
+print(Tuple1)
+
+
+Tuple1 = 5 
+n = 5
+print("\nTuple with a loop") 
+for i in range(int(n)): 
+    Tuple1 = (Tuple1,)
+    print(Tuple1)
+
+a = 9, b = 2	
+# Division(floor) of number  
+print(a // b)
+print(a / b) 
+
+# output
+4
+4.5
+
+Overriding operator functionality in python is possible
+https://www.geeksforgeeks.org/operator-overloading-in-python/
+
+
+or condition
+
+4 or 5	- returns first true
+# output	4
+
+and condition
+
+4 and 5 - returns last true
+# output	5
+
+
+
+# python3 code to 
+# illustrate the 
+# difference between 
+# == and is operator 
+# [] is an empty list 
+list1 = [] 
+list2 = [] 
+list3=list1 
+
+if (list1 == list2): 
+	print("True") 
+else: 
+	print("False") 
+
+if (list1 is list2): 
+	print("True") 
+else: 
+	print("False") 
+
+if (list1 is list3): 
+	print("True") 
+else:	 
+	print("False") 
+
+
+Output:
+
+True
+False
+True
+
+
+
+# Python program to illustrate 
+# combining else with for 
+
+list = ["geeks", "for", "geeks"] 
+for index in range(len(list)): 
+	print list[index] 
+else: 
+	print "Inside Else Block"
+
+
+Output:
+
+geeks
+for
+geeks
+Inside Else Block
+
+
+
+https://www.geeksforgeeks.org/class-method-vs-static-method-python/
+
+
+returning multiple values
+
+# A Python program to return multiple 
+# values from a method using tuple 
+
+# This function returns a tuple 
+def fun(): 
+	str = "geeksforgeeks"
+	x = 20
+	return str, x; # Return tuple, we could also 
+					# write (str, x) 
+
+# Driver code to test above method 
+str, x = fun() # Assign returned tuple 
+print(str) 
+print(x) 
+
+
+decorators in python
+
+# Adds a welcome message to the string 
+# returned by fun(). Takes fun() as 
+# parameter and returns welcome(). 
+def decorate_message(fun): 
+
+	# Nested function 
+	def addWelcome(site_name): 
+		return "Welcome to " + fun(site_name) 
+
+	# Decorator returns a function 
+	return addWelcome 
+
+@decorate_message
+def site(site_name): 
+	return site_name; 
+
+# Driver code 
+
+# This call is equivalent to call to 
+# decorate_message() with function 
+# site("GeeksforGeeks") as parameter 
+print site("GeeksforGeeks") 
+
+
+output
+welcome to geeksforgeeks
+
+tricks
+
+# True, False in python are same as 1, 0
+# and : This a logical operator in python. “and” Return the first false value .if not found return last
+# or : This a logical operator in python. “or” Return the first True value.if not found return last
+
+# using is to check object identity 
+# string is immutable( cannot be changed once alloted) 
+# hence occupy same memory location 
+print (' ' is ' ') 
+  
+# using is to check object identity 
+# dictionary is mutable( can be changed once alloted) 
+# hence occupy different memory location 
+print ({} is {}) 
+
+
+list1=[1,2,3,4,5] 
+list2=[6,7,8,9] 
+for item in list1: 
+    if item in list2: 
+        print("overlapping")       
+else: 
+    print("not overlapping") 
+	
+# intuitive operators
+# is not
+# not in
+
+
+x = 5.2
+if (type(x) is not int): 
+    print ("true") 
+else: 
+    print ("false") 
+
+difference between coroutine and multithreading 
+
+In case of threads, it’s operating system (or run time environment) that switches between threads according to the scheduler. 
+While in case of coroutine, it’s the programmer and programming language which decides when to switch coroutines. 
+Coroutines work cooperatively multi task by suspending and resuming at set points by programmer.	
+
+In Python, coroutines are similar to generators but with few extra methods and slight change in how we use yield statement. 
+Generators produce data for iteration while coroutines can also consume data.
+
+# Python3 program for demonstrating 
+# coroutine execution 
+
+def print_name(prefix): 
+	print("Searching prefix:{}".format(prefix)) 
+	while True: 
+		name = (yield) 
+		if prefix in name: 
+			print(name) 
+
+# calling coroutine, nothing will happen 
+corou = print_name("Dear") 
+
+# This will start execution of coroutine and 
+# Prints first line "Searchig prefix..." 
+# and advance execution to the first yield expression 
+corou.__next__()	# next(corou)
+
+# sending inputs 
+corou.send("Atul") 
+corou.send("Dear Atul") 
+
+#output
+Searching prefix:Dear
+Dear Atul
+
+def minimize():
+    current = yield
+    while True:
+        value = yield current	# goes as return value
+        print(value, current)
+        current = min(value, current)
+
+it = minimize()
+next(it)            # Prime the generator
+print("First ",it.send(10))
+print("Second ",it.send(4))
+print("Third ",it.send(22))
+print("Fourth ",it.send(-1))
+
+#output
+First 10
+4 10
+Second 4
+22 4
+Third 4
+-1 4
+Fourth -1
+
+# complex coroutine
+
+# Python3 program for demonstrating 
+# coroutine chaining 
+
+def producer(sentence, next_coroutine): 
+	''' 
+	Producer which just split strings and 
+	feed it to pattern_filter coroutine 
+	'''
+	tokens = sentence.split(" ") 
+	for token in tokens: 
+		next_coroutine.send(token) 
+	next_coroutine.close() 
+
+def pattern_filter(pattern="ing", next_coroutine=None): 
+	''' 
+	Search for pattern in received token 
+	and if pattern got matched, send it to 
+	print_token() coroutine for printing 
+	'''
+	print("Searching for {}".format(pattern)) 
+	try: 
+		while True: 
+			token = (yield) 
+			if pattern in token: 
+				next_coroutine.send(token) 
+	except GeneratorExit: 
+		print("Done with filtering!!") 
+
+def print_token(): 
+	''' 
+	Act as a sink, simply print the 
+	received tokens 
+	'''
+	print("I'm sink, i'll print tokens") 
+	try: 
+		while True: 
+			token = (yield) 
+			print(token) 
+	except GeneratorExit: 
+		print("Done with printing!") 
+
+pt = print_token() 
+pt.__next__() 
+pf = pattern_filter(next_coroutine = pt) 
+pf.__next__() 
+
+sentence = "Bob is running behind a fast moving car"
+producer(sentence, pf) 
+
+# output
+I'm sink, i'll print tokens
+Searching for ing
+running
+moving
+Done with filtering!!
+Done with printing!
+
+
+# Factorial program with memoization using 
+# decorators. 
+
+# A decorator function for function 'f' passed 
+# as parameter 
+def memoize_factorial(f): 
+	memory = {} 
+
+	# This inner function has access to memory 
+	# and 'f' 
+	def inner(num): 
+		if num not in memory:		 
+			memory[num] = f(num) 
+		return memory[num] 
+
+	return inner 
+	
+@memoize_factorial
+def facto(num): 
+	if num == 1: 
+		return 1
+	else: 
+		return num * facto(num-1) 
+
+print(facto(5)) 
+
+Explanation: https://www.geeksforgeeks.org/memoization-using-decorators-in-python/
+Equivalent code: 
+	
+	facto = memoixe_factorial(facto)
+	print(facto(5))
+	
+Syntax for decorators with parameters
+
+@decorator(params)
+def func_name():
+    ''' Function implementation'''
+	
+Equivalent code:
+
+	def func_name():
+		''' Function implementation'''
+
+	func_name = (decorator(params))(func_name)
+	"""
+	
+	
+# Python program to demonstrate 
+# use of class method and static method. 
+from datetime import date 
+
+class Person: 
+	def __init__(self, name, age): 
+		self.name = name 
+		self.age = age 
+	
+	# a class method to create a Person object by birth year. 
+	@classmethod
+	def fromBirthYear(cls, name, year): 
+		return cls(name, date.today().year - year) 
+	
+	# a static method to check if a Person is adult or not. 
+	@staticmethod
+	def isAdult(age): 
+		return age > 18
+
+person1 = Person('mayank', 21) 
+person2 = Person.fromBirthYear('mayank', 1996) 
+
+print person1.age 
+print person2.age 
+
+# print the result 
+print Person.isAdult(22) 
+
+
+# Python program to understand range 
+
+# creates a demo range 
+demo = range(1, 31, 2) 
+
+# print the range 
+print(demo) 
+
+# print the start of range 
+print(demo.start) 
+
+# print step of range 
+print(demo.step) 
+
+# print the index of element 23 
+print(demo.index(23)) 
+
+# since 30 is not present it will give error 
+print(demo.index(30)) 
+
+
+
+# Program to show how to make changes to the 
+# class variable in Python 
+
+# Class for Computer Science Student 
+class CSStudent: 
+	stream = 'cse'	 # Class Variable 
+	def __init__(self, name, roll): 
+		self.name = name 
+		self.roll = roll 
+
+# New object for further implementation 
+a = CSStudent("check", 3) 
+print "a.tream =", a.stream 
+
+# Correct way to change the value of class variable 
+CSStudent.stream = "mec"
+print "\nClass variable changes to mec"
+
+# New object for further implementation 
+b = CSStudent("carter", 4) 
+
+print "\nValue of variable steam for each object"
+print "a.stream =", a.stream 
+print "b.stream =", b.stream 
+
+class method vs static method
+https://www.geeksforgeeks.org/class-method-vs-static-method-python/
+
+# Python program to illustrate destructor 
+class Employee: 
+
+	# Initializing 
+	def __init__(self): 
+		print('Employee created.') 
+
+	# Deleting (Calling destructor) 
+	def __del__(self): 
+		print('Destructor called, Employee deleted.') 
+
+obj = Employee() 
+del obj 
+
+# str vs repr method
+
+if we print string using repr() function then it prints with a pair of quotes (ie. 'manikandan') and 
+if we calculate a value we get more precise value (ie. exact value with decimal point) than str() function.
+
+https://www.geeksforgeeks.org/str-vs-repr-in-python/
+
+another place:
+
+class Test: 
+	def __init__(self, a, b): 
+		self.a = a 
+		self.b = b 
+
+	def __repr__(self): 
+		return "Test a:%s b:%s" % (self.a, self.b) 
+
+	def __str__(self): 
+		return "From str method of Test: a is %s," \ 
+			"b is %s" % (self.a, self.b) 
+
+# Driver Code		 
+t = Test(1234, 5678) 
+print(t) # This calls __str__() 
+print([t]) # This calls __repr__() 
+
+another place:
+
+If no __str__ method is defined, print t (or print str(t)) uses __repr__
+
+class Test: 
+	def __init__(self, a, b): 
+		self.a = a 
+		self.b = b 
+
+	def __repr__(self): 
+		return "Test a:%s b:%s" % (self.a, self.b) 
+
+# Driver Code		 
+t = Test(1234, 5678) 
+print(t) 
+
+If no __repr__ method is defined then the default is used
+
+class Test: 
+	def __init__(self, a, b): 
+		self.a = a 
+		self.b = b 
+
+# Driver Code		 
+t = Test(1234, 5678) 
+print(t) 
+
+# outputs
+<__main__.Test instance at 0x7fa079da6710>
+
+
+# class attribute vs instance attribute
+
+class Person:
+	count = 0			# class attribute, which will be shared by all instances
+	def increment(self): 
+		count += 1
+
+person_1 = Person()
+person_2 = Person()
+
+person_1.increment()
+person_2.increment()
+
+print(person_1.count)	# 1
+print(person_2.count)	# 2
+
+print(Person.count)		# 2
+
+# reflection
+
+# Python program to illustrate reflection 
+def reverse(seq): 
+	SeqType = type(seq) 
+	emptySeq = SeqType() 	# creates appropriate empty container, which is respective to its type
+	
+	if seq == emptySeq: 
+		return emptySeq 
+	
+	restrev = reverse(seq[1:]) 
+	first = seq[0:1] 
+	
+	# Combine the result 
+	result = restrev + first 
+	
+	return result 
+
+# Driver code 
+print(reverse([1, 2, 3, 4])) 
+print(reverse("HELLO")) 
+
+
+# data hiding
+
+In Python, we use double underscore (Or __) before the attributes name and those attributes will not be directly visible outside.
+
+class MyClass: 
+
+	# Hidden member of MyClass 
+	__hiddenVariable = 0
+	
+	# A member method that changes 
+	# __hiddenVariable 
+	def add(self, increment): 
+		self.__hiddenVariable += increment 
+		print (self.__hiddenVariable) 
+
+# Driver code 
+myObject = MyClass()	 
+myObject.add(2) 
+myObject.add(5) 
+
+# This line causes error 
+print (myObject.__hiddenVariable) 
+
+
+We can access the value of hidden attribute by a tricky syntax:
+
+# A Python program to demonstrate that hidden 
+# members can be accessed outside a class 
+class MyClass: 
+
+	# Hidden member of MyClass 
+	__hiddenVariable = 10
+
+# Driver code 
+myObject = MyClass()	 
+print(myObject._MyClass__hiddenVariable) 
